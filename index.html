@@ -1,0 +1,91 @@
+import React, { useState } from "react";
+
+const FULL_NAME = "Nguyễn Đức Mạnh";
+const STUDENT_ID = "PK04486";
+const MAJOR = "Lập trình máy tính - Chuyên ngành Trí tuệ nhân tạo (AI)";
+const PHOTO_SRC = "your_photo_url_here";
+const VIDEO_SRC = "your_video_url_here";
+const EMAIL = "your_email@example.com";
+const GITHUB = "https://github.com/your-username";
+
+const PROJECTS = [
+  {
+    title: "Dự án Nhận diện ảnh",
+    thumbnail: "https://via.placeholder.com/400x250",
+    description: "Mô hình CNN phân loại ảnh",
+  },
+  {
+    title: "Chatbot AI",
+    thumbnail: "https://via.placeholder.com/400x250",
+    description: "Chatbot học máy trả lời câu hỏi",
+  },
+];
+
+export default function AppPortfolio() {
+  const [photoLoaded, setPhotoLoaded] = useState(false);
+
+  return (
+    <div className="min-h-screen bg-white text-gray-800">
+      <header className="bg-blue-600 text-white py-10 text-center">
+        <h1 className="text-4xl font-bold">{FULL_NAME}</h1>
+        <p className="mt-2">Mã sinh viên: {STUDENT_ID}</p>
+        <p className="mt-1">{MAJOR}</p>
+      </header>
+
+      <main className="max-w-5xl mx-auto p-6">
+        <section className="text-center mt-10">
+          <div className="w-40 h-40 rounded-full overflow-hidden mx-auto shadow-lg">
+            <img
+              src={PHOTO_SRC}
+              alt="avatar"
+              onLoad={() => setPhotoLoaded(true)}
+              className={`object-cover w-full h-full transition ${
+                photoLoaded ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          </div>
+          <p className="mt-4 text-lg text-gray-700">
+            Sinh viên đam mê AI, thích xây dựng mô hình học máy và sản phẩm ứng dụng.
+          </p>
+        </section>
+
+        <section className="mt-16">
+          <h2 className="text-2xl font-bold mb-6">Dự án</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {PROJECTS.map((p, i) => (
+              <div key={i} className="border rounded-lg overflow-hidden shadow-sm">
+                <img src={p.thumbnail} className="w-full h-40 object-cover" />
+                <div className="p-4">
+                  <h3 className="font-semibold">{p.title}</h3>
+                  <p className="text-gray-600 mt-2">{p.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-16">
+          <h2 className="text-2xl font-bold mb-6">Video Sản Phẩm</h2>
+          <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
+            <video src={VIDEO_SRC} controls className="w-full h-full" />
+          </div>
+        </section>
+
+        <section className="mt-16 text-center">
+          <h2 className="text-2xl font-bold mb-4">Liên hệ</h2>
+          <p>Email: {EMAIL}</p>
+          <p className="mt-2">
+            GitHub:{" "}
+            <a className="text-blue-600" href={GITHUB} target="_blank">
+              {GITHUB}
+            </a>
+          </p>
+        </section>
+      </main>
+
+      <footer className="py-8 bg-gray-100 text-center mt-16">
+        © 2025 {FULL_NAME} — {STUDENT_ID}
+      </footer>
+    </div>
+  );
+}
