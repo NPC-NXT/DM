@@ -6,35 +6,41 @@
   <title>Nguyễn Đức Mạnh — Portfolio</title>
   <meta name="description" content="Nguyễn Đức Mạnh (PK04486) - Lập trình máy tính, chuyên ngành AI" />
   <style>
-    :root{--blue:#0ea5e9;--muted:#6b7280;--max:1000px}
+    :root{--blue:#0ea5e9;--muted:#6b7280;--max:1100px}
+    *{box-sizing:border-box}
     body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;line-height:1.5;color:#111;margin:0;background:#fff}
-    .wrap{max-width:var(--max);margin:28px auto;padding:20px}
+    .wrap{max-width:var(--max);margin:36px auto;padding:20px}
     header{background:linear-gradient(90deg,var(--blue),#3b82f6);color:#fff;padding:28px;border-radius:12px}
     .hero{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
-    .avatar{width:140px;height:140px;border-radius:50%;overflow:hidden;flex:0 0 140px;border:4px solid rgba(255,255,255,0.15)}
+    .avatar{width:150px;height:150px;border-radius:50%;overflow:hidden;flex:0 0 150px;border:4px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.03)}
     .avatar img{width:100%;height:100%;object-fit:cover;display:block}
-    h1{font-size:1.8rem;margin:0}
-    p.lead{margin:8px 0;color:rgba(255,255,255,0.95)}
+    h1{font-size:1.9rem;margin:0}
+    .muted-light{margin-top:6px;color:rgba(255,255,255,0.95)}
+    p.lead{margin:12px 0 0;color:rgba(255,255,255,0.95);max-width:70%}
     section{margin-top:28px}
-    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-    .card{border:1px solid #e6e6e6;border-radius:10px;overflow:hidden;background:#fff}
-    .card img{width:100%;height:140px;object-fit:cover;display:block}
-    .card .body{padding:12px}
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .card{border:1px solid #ececec;border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,0.03)}
+    .card img{width:100%;height:160px;object-fit:cover;display:block}
+    .card .body{padding:14px}
     .muted{color:var(--muted);font-size:0.95rem}
     .contact a{color:var(--blue);text-decoration:none}
     footer{margin-top:28px;padding:18px 0;text-align:center;color:var(--muted);font-size:0.95rem}
-    .video-wrap{max-width:720px}
-    @media (max-width:600px){.hero{flex-direction:column;align-items:flex-start}.avatar{width:120px;height:120px}}
+    .video-wrap{max-width:900px}
+    @media (max-width:700px){.hero{flex-direction:column;align-items:flex-start}.avatar{width:120px;height:120px}}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
       <div class="hero">
-        <div class="avatar"><img src="YOUR_PHOTO_URL" alt="Ảnh Nguyễn Đức Mạnh" /></div>
+        <div class="avatar">
+          <!-- Avatar: dùng ảnh 1 -->
+          <img src="gen-h-z7289499093010_8fae8b5810f0812dd43b87cc8c2cce45.jpg" alt="Ảnh Nguyễn Đức Mạnh" />
+        </div>
+
         <div>
           <h1>Nguyễn Đức Mạnh</h1>
-          <div class="muted">Mã sinh viên: PK04486 • Lập trình máy tính — Chuyên ngành Trí tuệ nhân tạo (AI)</div>
+          <div class="muted-light">Mã sinh viên: PK04486 • Lập trình máy tính — Chuyên ngành Trí tuệ nhân tạo (AI)</div>
           <p class="lead">Sinh viên đam mê AI, thích xây dựng mô hình máy học và tạo sản phẩm thực tế. Mục tiêu: trở thành kỹ sư AI.</p>
         </div>
       </div>
@@ -44,7 +50,7 @@
       <h2>Dự án tiêu biểu</h2>
       <div class="projects">
         <div class="card">
-          <img src="https://via.placeholder.com/800x450?text=Project+1" alt="project 1" />
+          <img src="gen-h-z7289499093010_8fae8b5810f0812dd43b87cc8c2cce45.jpg" alt="project 1" />
           <div class="body">
             <strong>Dự án Nhận diện ảnh</strong>
             <p class="muted">Mô tả: Mô hình CNN phân loại ảnh (PyTorch).</p>
@@ -52,7 +58,7 @@
         </div>
 
         <div class="card">
-          <img src="https://via.placeholder.com/800x450?text=Project+2" alt="project 2" />
+          <img src="gen-h-z7289506382876_2a05c1da60142f095e53816a8ad7445b.jpg" alt="project 2" />
           <div class="body">
             <strong>Chatbot AI</strong>
             <p class="muted">Chatbot trả lời câu hỏi học tập, tích hợp API.</p>
@@ -72,9 +78,8 @@
     <section>
       <h2>Video sản phẩm</h2>
       <div class="video-wrap">
-        <!-- nếu là YouTube: dùng iframe, nếu là mp4: dùng <video> -->
-        <!-- YouTube example: <iframe width="100%" height="360" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe> -->
-        <video src="YOUR_VIDEO_URL" controls style="width:100%;border-radius:8px;background:#000"></video>
+        <!-- Video: dùng file đã upload (encode space thành %20) -->
+        <video src="Recording%202025-12-03%20212047.mp4" controls style="width:100%;border-radius:8px;background:#000;display:block"></video>
       </div>
       <p class="muted">Mô tả: Video demo — công nghệ, vai trò, năm thực hiện.</p>
     </section>
@@ -89,4 +94,3 @@
   </div>
 </body>
 </html>
-
