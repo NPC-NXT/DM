@@ -1,91 +1,91 @@
-import React, { useState } from "react";
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nguyễn Đức Mạnh — Portfolio</title>
+  <meta name="description" content="Nguyễn Đức Mạnh (PK04486) - Lập trình máy tính, chuyên ngành AI" />
+  <style>
+    :root{--blue:#0ea5e9;--muted:#6b7280;--max:1000px}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;line-height:1.5;color:#111;margin:0;background:#fff}
+    .wrap{max-width:var(--max);margin:28px auto;padding:20px}
+    header{background:linear-gradient(90deg,var(--blue),#3b82f6);color:#fff;padding:28px;border-radius:12px}
+    .hero{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+    .avatar{width:140px;height:140px;border-radius:50%;overflow:hidden;flex:0 0 140px;border:4px solid rgba(255,255,255,0.15)}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    h1{font-size:1.8rem;margin:0}
+    p.lead{margin:8px 0;color:rgba(255,255,255,0.95)}
+    section{margin-top:28px}
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+    .card{border:1px solid #e6e6e6;border-radius:10px;overflow:hidden;background:#fff}
+    .card img{width:100%;height:140px;object-fit:cover;display:block}
+    .card .body{padding:12px}
+    .muted{color:var(--muted);font-size:0.95rem}
+    .contact a{color:var(--blue);text-decoration:none}
+    footer{margin-top:28px;padding:18px 0;text-align:center;color:var(--muted);font-size:0.95rem}
+    .video-wrap{max-width:720px}
+    @media (max-width:600px){.hero{flex-direction:column;align-items:flex-start}.avatar{width:120px;height:120px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="hero">
+        <div class="avatar"><img src="YOUR_PHOTO_URL" alt="Ảnh Nguyễn Đức Mạnh" /></div>
+        <div>
+          <h1>Nguyễn Đức Mạnh</h1>
+          <div class="muted">Mã sinh viên: PK04486 • Lập trình máy tính — Chuyên ngành Trí tuệ nhân tạo (AI)</div>
+          <p class="lead">Sinh viên đam mê AI, thích xây dựng mô hình máy học và tạo sản phẩm thực tế. Mục tiêu: trở thành kỹ sư AI.</p>
+        </div>
+      </div>
+    </header>
 
-const FULL_NAME = "Nguyễn Đức Mạnh";
-const STUDENT_ID = "PK04486";
-const MAJOR = "Lập trình máy tính - Chuyên ngành Trí tuệ nhân tạo (AI)";
-const PHOTO_SRC = "your_photo_url_here";
-const VIDEO_SRC = "your_video_url_here";
-const EMAIL = "your_email@example.com";
-const GITHUB = "https://github.com/your-username";
-
-const PROJECTS = [
-  {
-    title: "Dự án Nhận diện ảnh",
-    thumbnail: "https://via.placeholder.com/400x250",
-    description: "Mô hình CNN phân loại ảnh",
-  },
-  {
-    title: "Chatbot AI",
-    thumbnail: "https://via.placeholder.com/400x250",
-    description: "Chatbot học máy trả lời câu hỏi",
-  },
-];
-
-export default function AppPortfolio() {
-  const [photoLoaded, setPhotoLoaded] = useState(false);
-
-  return (
-    <div className="min-h-screen bg-white text-gray-800">
-      <header className="bg-blue-600 text-white py-10 text-center">
-        <h1 className="text-4xl font-bold">{FULL_NAME}</h1>
-        <p className="mt-2">Mã sinh viên: {STUDENT_ID}</p>
-        <p className="mt-1">{MAJOR}</p>
-      </header>
-
-      <main className="max-w-5xl mx-auto p-6">
-        <section className="text-center mt-10">
-          <div className="w-40 h-40 rounded-full overflow-hidden mx-auto shadow-lg">
-            <img
-              src={PHOTO_SRC}
-              alt="avatar"
-              onLoad={() => setPhotoLoaded(true)}
-              className={`object-cover w-full h-full transition ${
-                photoLoaded ? "opacity-100" : "opacity-0"
-              }`}
-            />
+    <section>
+      <h2>Dự án tiêu biểu</h2>
+      <div class="projects">
+        <div class="card">
+          <img src="https://via.placeholder.com/800x450?text=Project+1" alt="project 1" />
+          <div class="body">
+            <strong>Dự án Nhận diện ảnh</strong>
+            <p class="muted">Mô tả: Mô hình CNN phân loại ảnh (PyTorch).</p>
           </div>
-          <p className="mt-4 text-lg text-gray-700">
-            Sinh viên đam mê AI, thích xây dựng mô hình học máy và sản phẩm ứng dụng.
-          </p>
-        </section>
+        </div>
 
-        <section className="mt-16">
-          <h2 className="text-2xl font-bold mb-6">Dự án</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {PROJECTS.map((p, i) => (
-              <div key={i} className="border rounded-lg overflow-hidden shadow-sm">
-                <img src={p.thumbnail} className="w-full h-40 object-cover" />
-                <div className="p-4">
-                  <h3 className="font-semibold">{p.title}</h3>
-                  <p className="text-gray-600 mt-2">{p.description}</p>
-                </div>
-              </div>
-            ))}
+        <div class="card">
+          <img src="https://via.placeholder.com/800x450?text=Project+2" alt="project 2" />
+          <div class="body">
+            <strong>Chatbot AI</strong>
+            <p class="muted">Chatbot trả lời câu hỏi học tập, tích hợp API.</p>
           </div>
-        </section>
+        </div>
 
-        <section className="mt-16">
-          <h2 className="text-2xl font-bold mb-6">Video Sản Phẩm</h2>
-          <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
-            <video src={VIDEO_SRC} controls className="w-full h-full" />
+        <div class="card">
+          <img src="https://via.placeholder.com/800x450?text=Project+3" alt="project 3" />
+          <div class="body">
+            <strong>Prototype VR</strong>
+            <p class="muted">Giao diện thử nghiệm bằng Three.js + React.</p>
           </div>
-        </section>
+        </div>
+      </div>
+    </section>
 
-        <section className="mt-16 text-center">
-          <h2 className="text-2xl font-bold mb-4">Liên hệ</h2>
-          <p>Email: {EMAIL}</p>
-          <p className="mt-2">
-            GitHub:{" "}
-            <a className="text-blue-600" href={GITHUB} target="_blank">
-              {GITHUB}
-            </a>
-          </p>
-        </section>
-      </main>
+    <section>
+      <h2>Video sản phẩm</h2>
+      <div class="video-wrap">
+        <!-- nếu là YouTube: dùng iframe, nếu là mp4: dùng <video> -->
+        <!-- YouTube example: <iframe width="100%" height="360" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe> -->
+        <video src="YOUR_VIDEO_URL" controls style="width:100%;border-radius:8px;background:#000"></video>
+      </div>
+      <p class="muted">Mô tả: Video demo — công nghệ, vai trò, năm thực hiện.</p>
+    </section>
 
-      <footer className="py-8 bg-gray-100 text-center mt-16">
-        © 2025 {FULL_NAME} — {STUDENT_ID}
-      </footer>
-    </div>
-  );
-}
+    <section class="contact">
+      <h2>Liên hệ</h2>
+      <p class="muted">Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+      <p class="muted">GitHub: <a href="https://github.com/your-username" target="_blank">github.com/your-username</a></p>
+    </section>
+
+    <footer>© 2025 Nguyễn Đức Mạnh — PK04486</footer>
+  </div>
+</body>
+</html>
